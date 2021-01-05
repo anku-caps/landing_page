@@ -21,11 +21,21 @@
     
   <script src="js/bootstrap.min.js"></script>
   <script src="/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+var scrolltotop={setting:{startline:100,scrollto:0,scrollduration:1e3,fadeduration:[500,100]},controlHTML:'<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow1.png" />',controlattrs:{offsetx:5,offsety:5},anchorkeyword:"#top",state:{isvisible:!1,shouldvisible:!1},scrollup:function(){this.cssfixedsupport||this.$control.css({opacity:0});var t=isNaN(this.setting.scrollto)?this.setting.scrollto:parseInt(this.setting.scrollto);t="string"==typeof t&&1==jQuery("#"+t).length?jQuery("#"+t).offset().top:0,this.$body.animate({scrollTop:t},this.setting.scrollduration)},keepfixed:function(){var t=jQuery(window),o=t.scrollLeft()+t.width()-this.$control.width()-this.controlattrs.offsetx,s=t.scrollTop()+t.height()-this.$control.height()-this.controlattrs.offsety;this.$control.css({left:o+"px",top:s+"px"})},togglecontrol:function(){var t=jQuery(window).scrollTop();this.cssfixedsupport||this.keepfixed(),this.state.shouldvisible=t>=this.setting.startline?!0:!1,this.state.shouldvisible&&!this.state.isvisible?(this.$control.stop().animate({opacity:1},this.setting.fadeduration[0]),this.state.isvisible=!0):0==this.state.shouldvisible&&this.state.isvisible&&(this.$control.stop().animate({opacity:0},this.setting.fadeduration[1]),this.state.isvisible=!1)},init:function(){jQuery(document).ready(function(t){var o=scrolltotop,s=document.all;o.cssfixedsupport=!s||s&&"CSS1Compat"==document.compatMode&&window.XMLHttpRequest,o.$body=t(window.opera?"CSS1Compat"==document.compatMode?"html":"body":"html,body"),o.$control=t('<div id="topcontrol">'+o.controlHTML+"</div>").css({position:o.cssfixedsupport?"fixed":"absolute",bottom:o.controlattrs.offsety,right:o.controlattrs.offsetx,opacity:0,cursor:"pointer"}).attr({title:"Scroll to Top"}).click(function(){return o.scrollup(),!1}).appendTo("body"),document.all&&!window.XMLHttpRequest&&""!=o.$control.text()&&o.$control.css({width:o.$control.width()}),o.togglecontrol(),t('a[href="'+o.anchorkeyword+'"]').click(function(){return o.scrollup(),!1}),t(window).bind("scroll resize",function(t){o.togglecontrol()})})}};scrolltotop.init();
+</script>
+<noscript>Not seeing a <a href="https://www.scrolltotop.com/">Scroll to Top Button</a>? Go to our FAQ page for more info.</noscript>
+
 
     
 
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"  href="css/lightslider.css"/>
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -46,6 +56,7 @@
         user-select: none;
       }
 
+      
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -57,34 +68,43 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
     <link href="grid.css" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="css/land.css">
   </head>
   <body>
     
+    
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
-    <div>
-     
-      <ul class="nav justify-content-center">
-  <li class="nav-item" style="font-size: 22px;">
-    <a class="nav-link active" aria-current="page" href="#">Home</a>
-  </li>
-  <li class="nav-item" style="font-size: 22px;">
-    <a class="nav-link" href="#products">Products</a>
-  </li>
-  <li class="nav-item" style="font-size: 22px;">
-    <a class="nav-link" href="#events">Events</a>
-  </li>
-  <li class="nav-item" style="font-size: 22px;">
-    <a class="nav-link" href="#blogs">V-Blog</a>
-  </li>
-  <li class="nav-item" style="font-size: 22px;">
-    <a class="nav-link" href="#jobs">Jobs</a>
-  </li>
-</ul>
+    <nav1 class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid" style=" height: 40px;">
+      <a class="navbar-brand" href="#" style="font-size: 20px; ">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#" style="font-size: 20px; padding-left: 30px;">Products</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="font-size: 20px; padding-left: 30px;">Events</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="font-size: 20px; padding-left: 30px;">Blog</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="font-size: 20px; padding-left: 30px;">Jobs</a>
+          </li>
+          
+        </ul>
+        
+      </div>
     </div>
+  </nav1>
   </header>
 </div>
+
   <main>
     <section class="intro" style="padding-right: 10px;">
       <div class="left">
@@ -190,9 +210,12 @@
 
   const slider = new SliderClip(document.querySelector('.slider'));
 }
+
+
   </script>
 
   
+
 <hr class="featurette-divider">
 <h2 style="text-align: center; font-size: 25px;" id="products">PRODUCTS</h2>
     <div class="row featurette" style="padding-left: 20px; padding-right: 20px;">
@@ -200,62 +223,62 @@
      <div class="row row-cols-1 row-cols-sm-5 g-4" style="padding-left: 10px;">
   <div class="col">
     <div class="card h-100">
-      <img src="https://anku-caps.github.io/landing_page/image/coir.jpg" class="card-img-top">
+      <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\coir.jpg" class="card-img-top">
       <div class="card-body">
         <h2 style="text-align: center;">COIR POTS</h2>
         <h2 class="price"  style="font-size: 45px; text-align: center;">&#x20B9 45</h2>
       </div>
       <div class="card-footer" style="border: none;outline: 0;padding: 12px;color: black;background-color: #c5a880;text-align: center;cursor: pointer;width: 100%;font-size: 18px;">
-        <p><img src="https://anku-caps.github.io/landing_page/image/cart-plus.png"> Add To Cart</p>
+        <p><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\cart-plus.png"> Add To Cart</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-      <img src="https://anku-caps.github.io/landing_page/image/coir1.jpg" class="card-img-top" alt="...">
+      <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\coir1.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h2 style="text-align: center;">COIR MATS</h2>
         <h2 class="price" style="text-align: center; font-size: 45px;">&#x20B9 100</h2>
       </div>
       <div class="card-footer" style="border: none;outline: 0;padding: 12px;color: black;background-color: #c5a880;text-align: center;cursor: pointer;width: 100%;font-size: 18px;">
-        <p><img src="https://anku-caps.github.io/landing_page/image/cart-plus.png"> Add To Cart</p>
+        <p><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\cart-plus.png"> Add To Cart</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-      <img src="https://anku-caps.github.io/landing_page/image/dish.jpg" class="card-img-top" alt="...">
+      <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\dish.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h2 style="text-align: center;">COIR DISHWASHER</h2>
         <h2 class="price" style="text-align: center; font-size: 45px;">&#x20B9 25</h2>
       </div>
       <div class="card-footer" style="border: none;outline: 0;padding: 12px;color: black;background-color: #c5a880;text-align: center;cursor: pointer;width: 100%;font-size: 18px;">
-        <p><img src="https://anku-caps.github.io/landing_page/image/cart-plus.png"> Add To Cart</p>
+        <p><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\cart-plus.png"> Add To Cart</p>
       </div>
     </div>
   </div>
 
   <div class="col">
     <div class="card h-100">
-      <img src="https://anku-caps.github.io/landing_page/image/coir4.jpg" class="card-img-top">
+      <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\coir4.jpg" class="card-img-top">
       <div class="card-body">
         <h2 style="text-align: center;">COIR MATTRESS</h2>
         <h2 class="price"  style="font-size: 45px; text-align: center;">&#x20B9 45</h2>
       </div>
       <div class="card-footer" style="border: none;outline: 0;padding: 12px;color: black;background-color: #c5a880;text-align: center;cursor: pointer;width: 100%;font-size: 18px;">
-        <p><img src="https://anku-caps.github.io/landing_page/image/cart-plus.png"> Add To Cart</p>
+        <p><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\cart-plus.png"> Add To Cart</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-      <img src="https://anku-caps.github.io/landing_page/image/shoe.jpg" class="card-img-top">
+      <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\shoe.jpg" class="card-img-top">
       <div class="card-body">
         <h2 style="text-align: center; padding-bottom: 20px;">COIR SLIPPER</h2>
         <h2 class="price"  style="font-size: 45px; text-align: center;">&#x20B9 80</h2>
       </div>
       <div class="card-footer" style="border: none;outline: 0;padding: 12px;color: black;background-color: #c5a880;text-align: center;cursor: pointer;width: 100%;font-size: 18px;">
-        <p><img src="https://anku-caps.github.io/landing_page/image/cart-plus.png"> Add To Cart</p>
+        <p><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\cart-plus.png"> Add To Cart</p>
       </div>
     </div>
   </div>
@@ -268,12 +291,12 @@
     <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="https://anku-caps.github.io/landing_page/image/coir3.jpg" alt="Card image cap">
+                <img class="card-img-top" src="C:\Users\Ankitha Pinky\Desktop\landing\image\coir3.jpg" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="https://anku-caps.github.io/landing_page/image/ca.png"> Book event</button>
+                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\ca.png"> Book event</button>
                       
                     </div>
                     
@@ -283,14 +306,14 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="https://anku-caps.github.io/landing_page/image/cc.jpg" alt="Card image cap" style="padding-bottom: 10px;">
+                <img class="card-img-top" src="C:\Users\Ankitha Pinky\Desktop\landing\image\cc.jpg" alt="Card image cap" style="padding-bottom: 10px;">
                 <div class="card-body">
                   <br>
 
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="https://anku-caps.github.io/landing_page/image/ca.png"> Book event</button>
+                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\ca.png"> Book event</button>
                     </div>
                     
                   </div>
@@ -299,7 +322,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="https://anku-caps.github.io/landing_page/image/ss.jpg" class="img-fluid" alt="Card image cap" style="padding-bottom: 10px;">
+                <img class="card-img-top" src="C:\Users\Ankitha Pinky\Desktop\landing\image\ss.jpg" class="img-fluid" alt="Card image cap" style="padding-bottom: 10px;">
                 <div class="card-body">
                   <br>
                   <br>
@@ -309,7 +332,7 @@
                   <p class="card-text">Book your tickets to stay 2 days and 1 night in the most beutiful houseboat. You will definitely enjoy the beauty of east-venice and grab a delightful kerala meals along with the package.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="https://anku-caps.github.io/landing_page/image/ca.png"> Book event</button>
+                      <button type="button" class="btn btn-md btn-outline-secondary"><img src="C:\Users\Ankitha Pinky\Desktop\landing\image\ca.png"> Book event</button>
                       
                     </div>
                     
@@ -331,7 +354,7 @@
     
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://anku-caps.github.io/landing_page/image/qq.jpeg" style="width: 1200px; height: auto; padding-left: 100px;">
+        <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\qq.jpeg" style="width: 1200px; height: auto; padding-left: 100px;">
 
         
       </div>
@@ -355,21 +378,21 @@
     <!-- Three columns of text below the carousel -->
     <div class="row" style="font-family: 'Noto Sans JP', sans-serif;">
       <div class="col-lg-4">
-        <img src="https://anku-caps.github.io/landing_page/image/pic2.jpg">
+        <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\pic2.jpg">
 
         <h2>Heading</h2>
         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
         <p><a class="btn btn-secondary" href="#" role="button" style="background-color: #cdac81;">Read More &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="https://anku-caps.github.io/landing_page/image/pic3.jpg">
+        <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\pic3.jpg">
 
         <h2>Heading</h2>
         <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <p><a class="btn btn-secondary" href="#" role="button" style="background-color: #cdac81;">Read More &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="https://anku-caps.github.io/landing_page/image/pic4.jpg">
+        <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\pic4.jpg">
 
         <h2>Heading</h2>
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
@@ -428,7 +451,7 @@
     <div class="card">
       <div class="card-body">
         <div style="float: left;">
-          <img src="https://anku-caps.github.io/landing_page/image/l2.png" style="width: 70px;">
+          <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\l2.png" style="width: 70px;">
         </div>
         <h5 class="card-title"><b>Restuarent Manager</b></h5>
         <p class="card-text text-muted">@ Harvets Restuarent</p> <h6  style="float: right; font-size: 12px;"><b>1 month ago</b></h6>
@@ -444,7 +467,7 @@
     <div class="card">
       <div class="card-body">
         <div style="float: left;">
-          <img src="https://anku-caps.github.io/landing_page/image/l7.png" style="width: 80px;">
+          <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\l7.png" style="width: 80px;">
         </div>
         <h5 class="card-title"><b>Audio Editor</b></h5>
         <p class="card-text text-muted">@ C-company</p> <h6  style="float: right; font-size: 12px;"><b>10 days ago</b></h6>
@@ -465,7 +488,7 @@
     <div class="card">
       <div class="card-body">
         <div style="float: left;">
-          <img src="https://anku-caps.github.io/landing_page/image/l1.png" style="width: 90px; height: 60px;">
+          <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\l1.png" style="width: 90px; height: 60px;">
         </div>
         <h5 class="card-title"><b>Senior Designer(Lead)</b></h5>
         <p class="card-text text-muted">@ addidas</p> <h6  style="float: right; font-size: 12px;"><b>45 days ago</b></h6>
@@ -481,7 +504,7 @@
     <div class="card">
       <div class="card-body">
         <div style="float: left;">
-          <img src="https://anku-caps.github.io/landing_page/image/l4.jpg" style="width: 90px; height: 60px;">
+          <img src="C:\Users\Ankitha Pinky\Desktop\landing\image\l4.jpg" style="width: 90px; height: 60px;">
         </div>
         <h5 class="card-title"><b>Engineer</b></h5>
         <p class="card-text text-muted">@ twitter</p> <h6  style="float: right; font-size: 12px;"><b>1 month ago</b></h6>
@@ -500,6 +523,8 @@
 </div>
 </div>
 
+
   
   </body>
+  
 </html>
